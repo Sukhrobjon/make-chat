@@ -1,4 +1,9 @@
-
+// chat.js
 module.exports = (io, socket) => {
-    // future socket listener will be here
+
+    // Listen for "new user" socket emits
+    socket.on('new user', (username) => {
+        console.log(`${username} has joined the chat! ✋`);
+    })
+
 }
