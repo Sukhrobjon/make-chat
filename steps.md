@@ -5,11 +5,14 @@
     - Import socket.io and open a connection on the server side
     - Update the front end (client) to accept connections as well
     - Open up real time communication
-3. Implement user form[]
+3. Implement user form[DONE]
     - Pass the socket server and the socket itself
     - Build out the structure of the user form
     - Send info from the client to the server using the user form
     - Send info from the server to all clients
 4. Style and send messages
+    - Implement the styles for the app
+    - Send messages using sockets
+    - Listen for messages using sockets
 5. Connect/disconnect users
 6. Create/persist/join channels
