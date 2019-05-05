@@ -4,10 +4,13 @@ const app = express();
 //Socket.io has to use the http server
 const server = require('http').Server(app);
 
-//Socket.io
+//Socket.io connection with server
 const io = require('socket.io')(server);
 io.on("connection", (socket) => {
+    // This file will be read on new socket connections
+    require('./sockets/chat.js')(io, socket);
     console.log("🔌 New user connected! 🔌");
+
 })
 
 //Express View Engine for Handlebars
