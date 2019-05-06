@@ -19,18 +19,20 @@ $(document).ready(() => {
 
     $('#sendChatBtn').click((e) => {
         e.preventDefault();
-        // Get the message text value
+        // Get the client's channel
+        let channel = $('.channel-current').text();
         let message = $('#chatInput').val();
-        // Make sure it's not empty
         if (message.length > 0) {
-            // Emit the message with the current user to the server
             socket.emit('new message', {
                 sender: currentUser,
                 message: message,
+                //Send the channel over to the server
+                channel: channel
             });
             $('#chatInput').val("");
         }
     });
+
 
     // create new channel button
     $('#newChannelBtn').click(() => {
@@ -53,13 +55,17 @@ $(document).ready(() => {
 
     //Output the new message
     socket.on('new message', (data) => {
-        $('.messageContainer').append(`
-            <div class="message">
+        //Only append the message if the user is currently in that channel
+        let currentChannel = $('.channel-current').text();
+        if (currentChannel == data.channel) {
+            $('.messageContainer').append(`<div class="message">
             <p class="messageUser">${data.sender}: </p>
             <p class="messageText">${data.message}</p>
             </div>
-        `);
+            `);
+        }
     })
+
 
     // Get the online users and display on the page
     socket.on('get online users', (onlineUsers) => {
