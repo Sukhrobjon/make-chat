@@ -8,12 +8,15 @@ const server = require('http').Server(app);
 const io = require('socket.io')(server);
 // store online users
 let onlineUsers = {}
+// save the channels in this object
+let channels = {"General": []}
 io.on("connection", (socket) => {
     // This file will be read on new socket connections
-    require('./sockets/chat.js')(io, socket, onlineUsers);
+    require('./sockets/chat.js')(io, socket, onlineUsers, channels);
     console.log("🔌 New user connected! 🔌");
 
 })
+
 
 //Express View Engine for Handlebars
 const exphbs = require('express-handlebars');
