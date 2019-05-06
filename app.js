@@ -1,6 +1,7 @@
 //App.js
 const express = require('express');
 const app = express();
+const port = process.env.PORT || 3000
 //Socket.io has to use the http server
 const server = require('http').Server(app);
 
@@ -30,6 +31,6 @@ app.get('/', (req, res) => {
     res.render('index.handlebars');
 })
 
-server.listen('3000', () => {
+server.listen(port, () => {
     console.log('Server listening on Port 3000');
 })
