@@ -1,11 +1,18 @@
 //index.js
 $(document).ready(() => {
+    
     const socket = io.connect();
-
     //Keep track of the current user
     let currentUser;
     // Get the online users from the server
     socket.emit('get online users');
+    
+    //Users can change the channel by clicking on its name.
+    $(document).on('click', '.channel', (e) => {
+        let newChannel = e.target.textContent;
+        socket.emit('user changed channel', newChannel);
+    });
+    // ============ CREATE USER ===========
     $('#createUserBtn').click((e) => {
         e.preventDefault();
         if ($('#usernameInput').val().length > 0) {
