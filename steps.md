@@ -18,7 +18,7 @@
     - Save the onlineUsers object
     - Display the online users
     - Remove users when they leave the app
-6. Create/persist/join channels
+6. Create/persist/join channels[DONE]
     - Create a button to generate a new channel
     - Persist channels locally
     - Join other channels

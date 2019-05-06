@@ -116,4 +116,8 @@ typings/
 # DynamoDB Local files
 .dynamodb/
 
+# ignore steps
+
+steps.md
+
 # End of https://www.gitignore.io/api/node,macos
