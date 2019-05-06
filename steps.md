@@ -14,8 +14,13 @@
     - Implement the styles for the app
     - Send messages using sockets
     - Listen for messages using sockets
-5. Connect/disconnect users
+5. Connect/disconnect users[DONE]
     - Save the onlineUsers object
     - Display the online users
     - Remove users when they leave the app
 6. Create/persist/join channels
+    - Create a button to generate a new channel
+    - Persist channels locally
+    - Join other channels
+    - Ensure messages go to their designated channels
+    - Allow users to change channels
