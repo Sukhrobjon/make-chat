@@ -6,9 +6,11 @@ const server = require('http').Server(app);
 
 //Socket.io connection with server
 const io = require('socket.io')(server);
+// store online users
+let onlineUsers = {}
 io.on("connection", (socket) => {
     // This file will be read on new socket connections
-    require('./sockets/chat.js')(io, socket);
+    require('./sockets/chat.js')(io, socket, onlineUsers);
     console.log("🔌 New user connected! 🔌");
 
 })

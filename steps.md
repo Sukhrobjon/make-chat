@@ -10,9 +10,12 @@
     - Build out the structure of the user form
     - Send info from the client to the server using the user form
     - Send info from the server to all clients
-4. Style and send messages
+4. Style and send messages[DONE]
     - Implement the styles for the app
     - Send messages using sockets
     - Listen for messages using sockets
 5. Connect/disconnect users
+    - Save the onlineUsers object
+    - Display the online users
+    - Remove users when they leave the app
 6. Create/persist/join channels
